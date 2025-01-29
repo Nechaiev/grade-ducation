@@ -1,5 +1,23 @@
-# Vue 3 + Vite
+# 🚀 Vue 3 Test Task - Grade Education Centre
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 📌 Опис проєкту
+Цей проєкт – це тестове завдання для Frontend Developer у компанії **Grade Education Centre**.  
+Він побудований на **Vue 3 + Vite + Tailwind CSS + Vue Router** та використовує **MockAPI** для отримання відгуків.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## 🛠 Використані технології
+- ⚡ **Vue 3** + Composition API
+- 🚀 **Vite** (швидкий збірник)
+- 🛣 **Vue Router** (для маршрутизації)
+- 🎨 **Tailwind CSS** (адаптивна стилізація)
+- 🌍 **Vue i18n** (інтернаціоналізація)
+- 🔄 **MockAPI** (імітація бекенду)
+
+---
+
+📌 API (MockAPI)
+Використовується MockAPI для отримання відгуків у JSON-форматі.
+
+🔗 API-ендпоінт
+https://679955c6be2191d708b2a655.mockapi.io/reviews/1
+
+📌 Якщо API не працює, замініть apiUrl у ReviewPage.vue на актуальний.
