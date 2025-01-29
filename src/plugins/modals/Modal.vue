@@ -1,3 +1,15 @@
+<script setup>
+defineProps({
+  title: String,
+  modelValue: Boolean,
+});
+const emit = defineEmits(["update:modelValue"]);
+
+const closeModal = () => {
+  emit("update:modelValue", false);
+};
+</script>
+
 <template>
   <div v-if="modelValue" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
     <div class="bg-white p-6 rounded-lg shadow-lg w-96">
@@ -9,20 +21,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-defineProps({
-  title: String,  // Заголовок модального вікна
-  modelValue: Boolean,  // Стан відкриття/закриття (v-model)
-});
-const emit = defineEmits(["update:modelValue"]); // Подія для закриття
-
-// Функція закриття вікна
-const closeModal = () => {
-  emit("update:modelValue", false);
-};
-</script>
-
-<style scoped>
-
-</style>
