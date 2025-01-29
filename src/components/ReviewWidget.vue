@@ -20,7 +20,10 @@ const error = ref(null);
 const fetchData = async () => {
   try {
     const response = await fetch(props.apiUrl);
-    if (!response.ok) throw new Error("Дані не знайдено (404)");
+    if (!response.ok) {
+      error.value = "Дані не знайдено (404)";
+      return;
+    }
 
     const data = await response.json();
     rating.value = Math.min(5.0, Math.max(1.0, parseFloat(data.rating.toFixed(1))));
