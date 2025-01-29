@@ -1,1 +1,33 @@
 @import 'tailwindcss';
+@font-face {
+    font-family: 'Formular';
+    src: url('./assets/fonts/Formular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Formular';
+    src: url('./assets/fonts/Formular-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Greenwich';
+    src: url('./assets/fonts/Greenwich-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+*, button {
+    font-family: 'Formular';
+}
+
+
+#review-widget {
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.05);
+}
