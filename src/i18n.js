@@ -9,7 +9,7 @@ const messages = {
     reviewsTitle: "Customer reviews on Google",
     reviews: "reviews",
     loading: "Loading...",
-    writeReview: "Write a review",
+    writeReview: "Write",
     view: "View",
     leaveReview: "Leave a review",
     writeYourMessage: "Write your message...",
@@ -24,7 +24,7 @@ const messages = {
     reviewsTitle: "Відгуки наших клієнтів у Google",
     reviews: "відгуки",
     loading: "Завантаження...",
-    writeReview: "Написати відгук",
+    writeReview: "Написати",
     view: "Переглянути",
     leaveReview: "Залиште повідомлення",
     writeYourMessage: "Напишіть ваше повідомлення...",
@@ -34,7 +34,10 @@ const messages = {
 };
 
 const i18n = createI18n({
+  legacy: false,
   locale: 'uk',
+  fallbackLocale: 'en',
+  globalInjection: true,
   messages
 });
 
