@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, defineProps } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import Modal from "../plugins/modals/Modal.vue";
 import { useI18n } from 'vue-i18n';
 
@@ -58,8 +58,8 @@ onMounted(fetchData);
          xl:max-w-[1286px] md:max-w-[912px] md:flex-row md:h-[142px]
          flex flex-col items-center justify-between sm:max-w-none max-[640px]:max-w-[328px]"
   >
-    <div class="grid lg:flex w-full">
-      <div class="flex items-center space-x-3 sm:space-x-5 text-center sm:text-left w-full">
+    <div class=" grid lg:flex lg:mb-0 mb-4 w-full">
+      <div class="flex items-center space-x-5 text-center sm:text-left w-full">
         <img
           src="https://grade.ua/app/themes/sage/dist/images/icons/google-reviews-banner/google-logo.svg"
           alt="Google"
@@ -77,8 +77,8 @@ onMounted(fetchData);
         class="flex items-center space-x-2 mt-3 sm:mt-0 lg:ms-16 w-full justify-center sm:justify-start max-[640px]:flex-col max-[640px]:items-start"
       >
 
-        <div class="flex items-center space-x-2">
-          <span class="font-greenwich font-medium text-[24px] md:text-[36px] leading-none me-2 md:mt-[10px]">
+        <div class="flex items-center lg:space-x-2 mb-2 lg:mb-0">
+          <span class="font-greenwich font-medium text-[24px] md:text-[36px] leading-none me-5 lg:me-2 md:mt-[10px]">
             {{ rating }}
           </span>
           <div class="flex space-x-[6px] md:mt-[10px]">
@@ -94,7 +94,7 @@ onMounted(fetchData);
       </div>
     </div>
 
-    <div class="mt-4 sm:mt-0 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-5 md:space-x-3 md:ms-auto w-full sm:w-auto">
+    <div class=" flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-5 md:space-x-3 md:ms-auto w-full sm:w-auto">
       <button
         @click="redirectToGoogle"
         class="bg-[linear-gradient(to_right,#E6F7F5,#F8FCFC)] px-5 py-3 rounded-md text-sm transition border-1 border-[#AACEDB] w-full sm:w-auto"
