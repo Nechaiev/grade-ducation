@@ -56,7 +56,7 @@ onMounted(fetchData);
     id="review-widget"
     class="w-full max-w-[1458px] mx-auto p-8 rounded-md bg-white
          xl:max-w-[1286px] md:max-w-[912px] md:flex-row md:h-[142px]
-         flex flex-col items-center justify-between sm:flex-col sm:items-center sm:text-center max-sm:max-w-[360px]"
+         flex flex-col items-center justify-between"
   >
     <div class="grid lg:flex">
       <div class="flex items-center space-x-3 sm:space-x-5 text-center sm:text-left">
@@ -70,10 +70,10 @@ onMounted(fetchData);
 
       <div v-if="loading" class="text-gray-500">{{ t("loading") }}</div>
       <div v-else-if="error" class="text-red-500">{{ error }}</div>
-      <div v-else class="flex items-center space-x-2 mt-3 sm:mt-0 lg:ms-16 sm:flex-col sm:space-x-0 sm:space-y-[6px] sm:flex-col sm:space-x-0 sm:space-y-[6px] sm:items-center">
-        <span class="text-[24px] leading-none !font-[Greenwich] me-2 md:mt-[10px] sm:mt-[20px]">{{ rating }}</span>
+      <div v-else class="flex items-center space-x-2 mt-3 sm:mt-0 lg:ms-16 ">
+        <span class="text-[24px] leading-none !font-[Greenwich] me-2 md:mt-[10px]">{{ rating }}</span>
 
-        <div class="flex space-x-[6px] md:mt-[10px] sm:space-x-[4px]">
+        <div class="flex space-x-[6px] md:mt-[10px]">
           <span v-for="n in stars.full" :key="'full' + n" class="text-yellow-400 text-[24px] leading-none">★</span>
           <span v-if="stars.half" class="text-yellow-400 text-[24px] leading-none">☆</span>
           <span v-for="n in stars.empty" :key="'empty' + n" class="text-gray-300 text-[24px] leading-none">★</span>
@@ -83,7 +83,7 @@ onMounted(fetchData);
       </div>
     </div>
 
-    <div class="mt-4 sm:mt-0 flex space-x-5 md:space-x-3 md:ms-auto sm:flex-col sm:space-x-0 sm:space-y-[10px] sm:flex sm:flex-col sm:space-x-0 sm:space-y-[10px] sm:w-full">
+    <div class="mt-4 sm:mt-0 flex space-x-5 md:space-x-3 md:ms-auto">
       <button
         @click="redirectToGoogle"
         class="bg-[linear-gradient(to_right,#E6F7F5,#F8FCFC)] px-5 py-3 rounded-md text-sm transition border-1 border-[#AACEDB]"
@@ -98,7 +98,6 @@ onMounted(fetchData);
       </button>
     </div>
   </div>
-
   <Modal v-model="isModalOpen" :title="t('leaveReview')">
     <textarea
       v-model="message"
