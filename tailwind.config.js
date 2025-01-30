@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        formular: ['Formular', 'sans-serif'],
-        formularMedium: ['Formular-Medium', 'sans-serif'],
-        greenwichMedium: ['Greenwich-Medium', 'sans-serif'],
+        formular: ["Formular", "sans-serif"],
+        formularMedium: ["Formular", "sans-serif"],
+        greenwich: ["Greenwich", "sans-serif"],
       },
       colors: {
         customBlue: "#1E3A8A",
