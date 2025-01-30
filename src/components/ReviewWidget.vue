@@ -58,8 +58,8 @@ onMounted(fetchData);
          xl:max-w-[1286px] md:max-w-[912px] md:flex-row md:h-[142px]
          flex flex-col items-center justify-between"
   >
-    <div class="grid lg:flex">
-      <div class="flex items-center space-x-3 sm:space-x-5 text-center sm:text-left">
+    <div class="grid lg:flex w-full">
+      <div class="flex items-center space-x-3 sm:space-x-5 text-center sm:text-left w-full">
         <img
           src="https://grade.ua/app/themes/sage/dist/images/icons/google-reviews-banner/google-logo.svg"
           alt="Google"
@@ -68,36 +68,80 @@ onMounted(fetchData);
         <span class="text-xl font-medium">{{ t(title) }}</span>
       </div>
 
-      <div v-if="loading" class="text-gray-500">{{ t("loading") }}</div>
-      <div v-else-if="error" class="text-red-500">{{ error }}</div>
-      <div v-else class="flex items-center space-x-2 mt-3 sm:mt-0 lg:ms-16 ">
-        <span class="text-[24px] leading-none !font-[Greenwich] me-2 md:mt-[10px]">{{ rating }}</span>
-
+      <div v-if="loading" class="text-gray-500 w-full text-center sm:text-left">{{ t("loading") }}</div>
+      <div v-else-if="error" class="text-red-500 w-full text-center sm:text-left">{{ error }}</div>
+      <div v-else class="flex items-center space-x-2 mt-3 sm:mt-0 lg:ms-16 w-full justify-center sm:justify-start">
+        <span class="text-[24px] leading-none font-[Greenwich] me-2 md:mt-[10px]">{{ rating }}</span>
         <div class="flex space-x-[6px] md:mt-[10px]">
           <span v-for="n in stars.full" :key="'full' + n" class="text-yellow-400 text-[24px] leading-none">★</span>
           <span v-if="stars.half" class="text-yellow-400 text-[24px] leading-none">☆</span>
           <span v-for="n in stars.empty" :key="'empty' + n" class="text-gray-300 text-[24px] leading-none">★</span>
         </div>
-
         <span class="text-[#798595] text-sm ms-4 md:mt-[10px]">{{ reviews }} {{ t("reviews") }}</span>
       </div>
     </div>
 
-    <div class="mt-4 sm:mt-0 flex space-x-5 md:space-x-3 md:ms-auto">
+    <div class="mt-4 sm:mt-0 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-5 md:space-x-3 md:ms-auto w-full sm:w-auto">
       <button
         @click="redirectToGoogle"
-        class="bg-[linear-gradient(to_right,#E6F7F5,#F8FCFC)] px-5 py-3 rounded-md text-sm transition border-1 border-[#AACEDB]"
+        class="bg-[linear-gradient(to_right,#E6F7F5,#F8FCFC)] px-5 py-3 rounded-md text-sm transition border-1 border-[#AACEDB] w-full sm:w-auto"
       >
         {{ t("view") }}
       </button>
       <button
         @click="isModalOpen = true"
-        class="bg-[linear-gradient(to_right,#3CB9A0,#1786AC)] text-white px-5 py-3 rounded-md text-sm hover:bg-teal-600 transition"
+        class="bg-[linear-gradient(to_right,#3CB9A0,#1786AC)] text-white px-5 py-3 rounded-md text-sm hover:bg-teal-600 transition w-full sm:w-auto"
       >
         {{ t("writeReview") }}
       </button>
     </div>
   </div>
+<!--  <div-->
+<!--    id="review-widget"-->
+<!--    class="w-full max-w-[1458px] mx-auto p-8 rounded-md bg-white-->
+<!--         xl:max-w-[1286px] md:max-w-[912px] md:flex-row md:h-[142px]-->
+<!--         flex flex-col items-center justify-between"-->
+<!--  >-->
+<!--    <div class="grid lg:flex">-->
+<!--      <div class="flex items-center space-x-3 sm:space-x-5 text-center sm:text-left">-->
+<!--        <img-->
+<!--          src="https://grade.ua/app/themes/sage/dist/images/icons/google-reviews-banner/google-logo.svg"-->
+<!--          alt="Google"-->
+<!--          class="w-10 h-10"-->
+<!--        />-->
+<!--        <span class="text-xl font-medium">{{ t(title) }}</span>-->
+<!--      </div>-->
+
+<!--      <div v-if="loading" class="text-gray-500">{{ t("loading") }}</div>-->
+<!--      <div v-else-if="error" class="text-red-500">{{ error }}</div>-->
+<!--      <div v-else class="flex items-center space-x-2 mt-3 sm:mt-0 lg:ms-16 ">-->
+<!--        <span class="text-[24px] leading-none !font-[Greenwich] me-2 md:mt-[10px]">{{ rating }}</span>-->
+
+<!--        <div class="flex space-x-[6px] md:mt-[10px]">-->
+<!--          <span v-for="n in stars.full" :key="'full' + n" class="text-yellow-400 text-[24px] leading-none">★</span>-->
+<!--          <span v-if="stars.half" class="text-yellow-400 text-[24px] leading-none">☆</span>-->
+<!--          <span v-for="n in stars.empty" :key="'empty' + n" class="text-gray-300 text-[24px] leading-none">★</span>-->
+<!--        </div>-->
+
+<!--        <span class="text-[#798595] text-sm ms-4 md:mt-[10px]">{{ reviews }} {{ t("reviews") }}</span>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div class="mt-4 sm:mt-0 flex space-x-5 md:space-x-3 md:ms-auto">-->
+<!--      <button-->
+<!--        @click="redirectToGoogle"-->
+<!--        class="bg-[linear-gradient(to_right,#E6F7F5,#F8FCFC)] px-5 py-3 rounded-md text-sm transition border-1 border-[#AACEDB]"-->
+<!--      >-->
+<!--        {{ t("view") }}-->
+<!--      </button>-->
+<!--      <button-->
+<!--        @click="isModalOpen = true"-->
+<!--        class="bg-[linear-gradient(to_right,#3CB9A0,#1786AC)] text-white px-5 py-3 rounded-md text-sm hover:bg-teal-600 transition"-->
+<!--      >-->
+<!--        {{ t("writeReview") }}-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
   <Modal v-model="isModalOpen" :title="t('leaveReview')">
     <textarea
       v-model="message"
